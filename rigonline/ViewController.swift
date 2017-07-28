@@ -10,10 +10,19 @@ import UIKit
 
 class ViewController: UIViewController, UIWebViewDelegate {
     
+    @IBOutlet var webView: UIWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        webView = UIWebView(frame: UIScreen.main.bounds)
+        webView.delegate = self
+        view.addSubview(webView)
+        if let url = URL(string: "http://www.rigonline.co.nz") {
+            let request = URLRequest(url: url)
+            webView.loadRequest(request)
+        }
     }
 
     override func didReceiveMemoryWarning() {
