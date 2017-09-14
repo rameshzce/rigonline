@@ -19,7 +19,7 @@ class ViewController: UIViewController, UIWebViewDelegate {
         webView = UIWebView(frame: UIScreen.main.bounds)
         webView.delegate = self
         view.addSubview(webView)
-        if let url = URL(string: "http://www.rigonline.co.nz") {
+        if let url = URL(string: "https://rigonline.co.nz") {
             let request = URLRequest(url: url)
             webView.loadRequest(request)
         }
